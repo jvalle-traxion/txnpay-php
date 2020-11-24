@@ -1,0 +1,11 @@
+{
+    "name": "johnvalle/traxionpay-php-sdk",
+    "description": "The official PHP SDK for Traxionpay",
+    "license": "BSD-3",
+    "require": {
+        "rmccue/requests": "^1.7"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    }
+}
