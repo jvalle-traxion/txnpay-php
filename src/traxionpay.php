@@ -41,7 +41,7 @@ class TraxionPay
      * @param array $params {
      *  An array containing the parameters.
      *  
-     *  @type string   merchant_id
+     *  @type integer  merchant_id
      *  @type string   merchant_ref_no
      *  @type string   description
      *  @type string   amount
@@ -166,7 +166,7 @@ class TraxionPay
      * @param array $params {
      *  @type string    OTP
      *  @type float     amount
-     *  @type string    bank_account
+     *  @type integer   bank_account
      * }
      */
     public function cashOut($params)

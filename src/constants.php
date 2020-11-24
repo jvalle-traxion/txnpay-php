@@ -8,7 +8,7 @@ class Constants {
     'cashIn' => [
       'merchant_id' => [
         'required' => true,
-        'type' => 'string'
+        'type' => 'integer'
       ],
       'merchant_ref_no' => [
         'required' => true,
@@ -140,7 +140,7 @@ class Constants {
       ],
       'bank_account' => [
         'required' => true,
-        'type' => 'string'
+        'type' => 'integer'
       ],
     ]
   );
