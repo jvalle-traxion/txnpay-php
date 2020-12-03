@@ -37,7 +37,6 @@ class TraxionPay
      * Cash In enables merchants to receive money through the application.
      * Through this feature, merchants receive payments and store it in their in-app wallet.
      *
-     * POST `https://devapi.traxionpay.com/payform-link`
      * @param array $params {
      *  An array containing the parameters.
      *  
@@ -76,12 +75,9 @@ class TraxionPay
                 'alg' => 'HS256'
             ];
             $encodedPayformData = json_encode($payformData, JSON_UNESCAPED_SLASHES);
-            $payload = ['form_data' => utf8_decode(base64_encode(utf8_encode($encodedPayformData)))];
+            $payload = utf8_decode(base64_encode(utf8_encode($encodedPayformData)));
 
-            // API Call
-            $response = request('POST', '/payform-link', array(), array(), $payload);
-            $data = $response->url;
-            return $data;
+            return $payload;
         } catch (\Throwable $th) {
             echo $th;
         }
