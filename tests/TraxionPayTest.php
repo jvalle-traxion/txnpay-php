@@ -45,7 +45,8 @@ class TraxionPayTest extends TestCase
             'pending_page_url' => $siteUrl,
             'billing_details' => $billing_details
         ]);
-        $this->assertIsString($data);
+        
+        $this->assertStringContainsString('https://dev.traxionpay.com/payme/?data=', $data);
     }
 
     public function testFetchBanks()
