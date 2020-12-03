@@ -1,4 +1,4 @@
-# TraxionPay Python SDK
+# TraxionPay PHP SDK
 
 ## Table of Contents
 
@@ -41,7 +41,7 @@ $response = $traxionpay->cashIn([
 #### Cash out
 ```php
 $otp = $traxionpay->fetchOTP();
-$data = $traxionpay->cashOut([
+$response = $traxionpay->cashOut([
     'OTP' => $otp->code,
     'amount' => 100.0,
     'bank_account' => 413
@@ -66,5 +66,5 @@ $bankAccounts = $traxionpay->fetchBankAccounts();
 ```
 #### Fetch banks
 ```php
-$banks = $traxionpay->fetchBanks()
+$banks = $traxionpay->fetchBanks();
 ```
