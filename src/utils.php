@@ -110,3 +110,11 @@ function getValidatedPayload($params, $keys)
         throw new Exception("`$params` must be of type `array`");
     }
 }
+
+function encodeAdditionalData($additionalData)
+{
+    if (is_object($additionalData)) {
+        return iconv('UTF-8', 'ASCII', base64_encode(utf8_encode(json_encode($additionalData))));
+    }
+    throw new Exception("'$additionalData must be of type `object`'");
+}
