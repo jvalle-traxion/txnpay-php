@@ -35,7 +35,7 @@ class TraxionPayTest extends TestCase
         $data = $this->api->cashIn([
             'merchant_id' => 6328,
             'merchant_ref_no' => 'ABC123DEF456',
-            'merchant_additional_data' => 'eyJwYXltZW50X2NvZGUiOiJBQkMxMjNERUY0NTYifQ==',
+            'merchant_additional_data' => (object)array("payment_code" => "ABC123DEF456"),
             'description' => 'My test payment',
             'amount' => 1500.0,
             'status_notification_url' => $apiUrl,
@@ -45,7 +45,7 @@ class TraxionPayTest extends TestCase
             'pending_page_url' => $siteUrl,
             'billing_details' => $billing_details
         ]);
-        
+
         $this->assertStringContainsString('https://dev.traxionpay.com/payme/?data=', $data);
     }
 

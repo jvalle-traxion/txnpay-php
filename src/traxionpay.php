@@ -65,7 +65,13 @@ class TraxionPay
 
             $cashInDetails = getValidatedPayload($rawDetails, Constants::KEYS['cashIn']);
             $billingDetails = getValidatedPayload($rawBilling, Constants::KEYS['billingDetails']);
+
+            $encodedAdditionalData = encodeAdditionalData($cashInDetails['merchant_additional_data']);
+            $cashInDetails['merchant_additional_data'] = $encodedAdditionalData;
+
             $payformData = array_merge($cashInDetails, $billingDetails);
+
+            var_dump($payformData);
 
             $data_to_hash = $payformData['merchant_ref_no'] . $payformData['amount'] . $payformData['currency'] . $payformData['description'];
             $secure_hash = hash_hmac('sha256', utf8_encode($data_to_hash), utf8_encode($this->secretKey));

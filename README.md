@@ -25,7 +25,7 @@ $traxionpay = new TraxionPay($yourApiKey, $yourSecretKey);
 $response = $traxionpay->cashIn([
     'merchant_id' => 6328,
     'merchant_ref_no' => 'ABC123DEF456',
-    'merchant_additional_data' => 'eyJwYXltZW50X2NvZGUiOiJBQkMxMjNERUY0NTYifQ==',
+    'merchant_additional_data' => (object)array("payment_code" => "ABC123DEF456"),
     'description' => 'My test payment',
     'amount' => 1500.0,
     'status_notification_url' => 'https://devapi.traxionpay.com/callback',
